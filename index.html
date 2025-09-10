@@ -2,40 +2,42 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- مهم للجوال -->
 <title>CodeEX Puzzle</title>
 <style>
   body {
     font-family: 'Arial', sans-serif;
-    background-color: #0F0842; 
+    background-color: #0F0842;
     color: #FFFFFF;
     display: flex;
     justify-content: center;
     align-items: center;
     min-height: 100vh;
     margin: 0;
-    padding: 20px;
+    padding: 15px;
   }
 
   .container {
     background-color: #F8F8FF;
-    padding: 40px 30px; 
-    border-radius: 25px;
-    box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+    padding: 30px 20px;
+    border-radius: 20px;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.2);
     text-align: center;
-    max-width: 500px;
-    width: 100%;
+    max-width: 500px;   /* يثبت الحجم على الكمبيوتر */
+    width: 100%;        /* يتناسب مع الجوال */
   }
 
   img {
-    width: 220px; 
-    margin-bottom: 15px;
+    width: 180px; 
+    max-width: 60%;   /* يمنع كبر اللوقو مره على الجوال */
+    margin-bottom: 20px;
     border-radius: 12px;
-    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    box-shadow: 0 4px 12px rgba(0,0,0,0.15);
   }
 
   h2 {
     color: #6A5ACD;
-    font-size: 24px;
+    font-size: 22px;
     margin-bottom: 10px;
   }
 
@@ -47,23 +49,23 @@
 
   pre {
     background-color: #E0E0E0;
-    color: #0F0842; 
-    display: block;
-    padding: 15px;
-    border-radius: 15px;
+    color: #0F0842;
+    padding: 12px;
+    border-radius: 12px;
     text-align: center;
     font-size: 12px;
     margin-bottom: 15px;
     overflow-x: auto;
+    word-wrap: break-word;
   }
 
-  input, input[name="username"] {
+  input {
     padding: 12px;
     width: 100%;
-    font-size: 14px;
-    border-radius: 10px;
+    font-size: 15px;
+    border-radius: 8px;
     border: 1px solid #6A5ACD;
-    margin-top: 10px;
+    margin-top: 8px;
     box-sizing: border-box;
     background-color: #F0F0F0;
     color: #333333;
@@ -71,14 +73,14 @@
   }
 
   button {
-    padding: 10px 30px;
-    font-size: 14px;
+    padding: 12px 28px;
+    font-size: 15px;
     cursor: pointer;
     margin-top: 15px;
     background-color: #6A5ACD;
     color: #FFFFFF;
     border: none;
-    border-radius: 12px;
+    border-radius: 10px;
     transition: 0.3s;
     font-weight: bold;
   }
@@ -88,18 +90,19 @@
   }
 
   #message {
-    margin-top: 15px;
+    margin-top: 12px;
     font-size: 14px;
     font-weight: bold;
     color: red;
   }
 
+  /* تعديلات للجوال */
   @media screen and (max-width: 480px) {
     .container {
-      padding: 25px 15px;
+      padding: 25px 18px;
     }
     img {
-      width: 140px;
+      width: 150px;
     }
     h2 {
       font-size: 20px;
@@ -108,17 +111,12 @@
       font-size: 14px;
     }
     pre {
-      font-size: 10px;
+      font-size: 11px;
     }
-    input {
-      font-size: 13px;
+    input, button {
+      font-size: 14px;
     }
-    button {
-      font-size: 13px;
-      padding: 8px 20px;
-    }
-}
-
+  }
 </style>
 </head>
 <body>
@@ -126,8 +124,8 @@
 <div class="container">
   <img src="logo.png" alt="CodeEX Logo">
 
-  <h2>🔓 Decode the Challenge to Access Your Exclusive Invitation</h2>
-  <p>Enter your name and decode the secret key:</p>
+  <h2>Crack the Code to Reveal Your Invitation</h2>
+  <p>Provide your name and decipher the secret key below:</p>
 
   <input type="text" id="username" placeholder="Enter your name">
   <pre>
@@ -161,4 +159,3 @@ function checkAnswer() {
 
 </body>
 </html>
-
