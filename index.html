@@ -2,149 +2,88 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- مهم للجوال -->
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>CodeEX Puzzle</title>
 <style>
-  body {
-    font-family: 'Arial', sans-serif;
-    background-color: #0F0842;
-    color: #FFFFFF;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    min-height: 100vh;
-    margin: 0;
-    padding: 15px;
-  }
+body {
+  font-family: 'Arial', sans-serif;
+  background-color: #0F0842;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  margin: 0;
+  padding: 15px;
+}
 
-  .container {
-    background-color: #F8F8FF;
-    padding: 30px 20px;
-    border-radius: 20px;
-    box-shadow: 0 8px 20px rgba(0,0,0,0.2);
-    text-align: center;
-    max-width: 500px;   /* يثبت الحجم على الكمبيوتر */
-    width: 100%;        /* يتناسب مع الجوال */
-  }
+.container {
+  background-color: #F8F8FF;
+  border-radius: 20px;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+  text-align: center;
+}
 
-  img {
-    width: 180px; 
-    max-width: 60%;   /* يمنع كبر اللوقو مره على الجوال */
-    margin-bottom: 20px;
-    border-radius: 12px;
-    box-shadow: 0 4px 12px rgba(0,0,0,0.15);
-  }
+/* Base Desktop */
+.container { max-width: 500px; padding: 35px; }
+img { width: 180px; }
+h2 { font-size: 24px; margin-bottom: 10px; color: #6A5ACD; }
+p { font-size: 16px; margin-bottom: 15px; color: #333333; }
+pre { background-color: #E0E0E0; color: #0F0842; padding: 12px; border-radius: 12px; font-size: 14px; margin-bottom: 15px; word-wrap: break-word; overflow-x: auto; text-align: center; }
+input { width: 100%; padding: 12px; font-size: 15px; border-radius: 8px; border: 1px solid #6A5ACD; margin-top: 8px; box-sizing: border-box; background-color: #F0F0F0; color: #333333; font-weight: bold; }
+button { padding: 12px 28px; font-size: 15px; cursor: pointer; margin-top: 15px; background-color: #6A5ACD; color: #FFFFFF; border: none; border-radius: 10px; font-weight: bold; transition: 0.3s; }
+button:hover { background-color: #8470FF; }
+#message { margin-top: 12px; font-size: 14px; font-weight: bold; color: red; }
 
-  h2 {
-    color: #6A5ACD;
-    font-size: 22px;
-    margin-bottom: 10px;
-  }
+/* Tablet */
+@media screen and (max-width: 1023px) {
+  .container { max-width: 450px; padding: 30px; }
+  img { width: 160px; }
+  h2 { font-size: 22px; }
+  p { font-size: 15px; }
+  pre { font-size: 13px; padding: 10px; }
+  input, button { font-size: 14px; padding: 10px; }
+}
 
-  p {
-    color: #333333;
-    font-size: 16px;
-    margin-bottom: 15px;
-  }
+/* Mobile Large */
+@media screen and (max-width: 767px) {
+  .container { width: 90%; padding: 25px; }
+  img { width: 150px; }
+  h2 { font-size: 20px; }
+  p { font-size: 14px; }
+  pre { font-size: 12px; padding: 10px; }
+  input, button { font-size: 14px; padding: 10px; }
+}
 
-  pre {
-    background-color: #E0E0E0;
-    color: #0F0842;
-    padding: 12px;
-    border-radius: 12px;
-    text-align: center;
-    font-size: 12px;
-    margin-bottom: 15px;
-    overflow-x: auto;
-    word-wrap: break-word;
-  }
-
-  input {
-    padding: 12px;
-    width: 100%;
-    font-size: 15px;
-    border-radius: 8px;
-    border: 1px solid #6A5ACD;
-    margin-top: 8px;
-    box-sizing: border-box;
-    background-color: #F0F0F0;
-    color: #333333;
-    font-weight: bold;
-  }
-
-  button {
-    padding: 12px 28px;
-    font-size: 15px;
-    cursor: pointer;
-    margin-top: 15px;
-    background-color: #6A5ACD;
-    color: #FFFFFF;
-    border: none;
-    border-radius: 10px;
-    transition: 0.3s;
-    font-weight: bold;
-  }
-
-  button:hover {
-    background-color: #8470FF;
-  }
-
-  #message {
-    margin-top: 12px;
-    font-size: 14px;
-    font-weight: bold;
-    color: red;
-  }
-
-  /* تعديلات للجوال */
-  @media screen and (max-width: 480px) {
-    .container {
-      padding: 25px 18px;
-    }
-    img {
-      width: 150px;
-    }
-    h2 {
-      font-size: 20px;
-    }
-    p {
-      font-size: 14px;
-    }
-    pre {
-      font-size: 11px;
-    }
-    input, button {
-      font-size: 14px;
-    }
-  }
+/* Mobile Small */
+@media screen and (max-width: 480px) {
+  .container { width: 90%; padding: 20px; }
+  img { width: 130px; }
+  h2 { font-size: 18px; }
+  p { font-size: 13px; }
+  pre { font-size: 11px; padding: 8px; }
+  input, button { font-size: 13px; padding: 8px; }
+}
 </style>
 </head>
 <body>
 
 <div class="container">
   <img src="logo.png" alt="CodeEX Logo">
-
   <h2>Crack the Code to Reveal Your Invitation</h2>
   <p>Provide your name and decipher the secret key below:</p>
-
   <input type="text" id="username" placeholder="Enter your name">
-  <pre>
-[67,111,100,101,69,88,123,67,111,110,103,114,97,116,117,108,97,116,105,111,110,115,33,32,89,111,117,39,114,101,32,106,111,105,110,105,110,103,32,67,111,100,101,69,88,125]
-  </pre>
+  <pre>[67,111,100,101,69,88,123,67,111,110,103,114,97,116,117,108,97,116,105,111,110,115,33,32,89,111,117,39,114,101,32,106,111,105,110,105,110,103,32,67,111,100,101,69,88,125]</pre>
   <input type="text" id="answer" placeholder="Type the secret key here">
   <br>
   <button onclick="checkAnswer()">Submit</button>
-
   <div id="message"></div>
 </div>
 
 <script>
 const puzzleSolution = "CodeEX{Congratulations! You're joining CodeEX}";
-
 function checkAnswer() {
   const userAnswer = document.getElementById('answer').value.trim();
   const userName = document.getElementById('username').value.trim() || "Participant";
-  
   if(userAnswer === puzzleSolution) {
     const uniqueNumber = Math.floor(Math.random() * 90000) + 10000;
     const invitationCode = `CodeEX{Welcome to CodeEX! Your adventure starts here - ID: ${uniqueNumber}}`;
