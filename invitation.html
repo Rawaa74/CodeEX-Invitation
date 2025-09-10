@@ -10,7 +10,7 @@ body {
   background-color: #0F0842;
   display: flex;
   justify-content: center;
-  align-items: flex-start; /* قلل المسافة العلوية */
+  align-items: flex-start; 
   min-height: 100vh;
   margin: 0;
   padding: 20px;
@@ -30,7 +30,7 @@ img {
   width: 180px;
   max-width: 60%;
   margin-bottom: 15px;
-  border-radius: 50%; /* لجعل اللوقو دائري */
+  border-radius: 12px;
   box-shadow: 0 4px 12px rgba(0,0,0,0.15);
 }
 
@@ -47,7 +47,7 @@ p {
 }
 
 .code-box {
-  background-color: #8236FC; /* لون الخلفية القديم */
+  background-color: #0F0842;
   color: #FFFFFF;
   padding: 18px;
   border-radius: 15px;
@@ -76,7 +76,7 @@ button:hover {
 /* Responsive */
 @media screen and (max-width: 1023px) {
   .container { max-width: 450px; padding: 25px; }
-  img { width: 160px; }
+  img { width: 160px; border-radius: 12px;}
   h2 { font-size: 22px; }
   p { font-size: 15px; }
   .code-box { font-size: 13px; padding: 15px; }
@@ -85,7 +85,7 @@ button:hover {
 
 @media screen and (max-width: 767px) {
   .container { width: 90%; padding: 25px; }
-  img { width: 150px; }
+  img { width: 150px; border-radius: 12px;}
   h2 { font-size: 20px; }
   p { font-size: 14px; }
   .code-box { font-size: 12px; padding: 12px; }
@@ -94,7 +94,7 @@ button:hover {
 
 @media screen and (max-width: 480px) {
   .container { width: 90%; padding: 20px; }
-  img { width: 130px; }
+  img { width: 130px; border-radius: 12px;}
   h2 { font-size: 18px; }
   p { font-size: 13px; }
   .code-box { font-size: 11px; padding: 10px; }
@@ -130,3 +130,4 @@ function copyCode() {
 </script>
 </body>
 </html>
+
