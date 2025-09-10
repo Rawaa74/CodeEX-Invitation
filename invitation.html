@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Your CodeEX Invitation</title>
+<style>
+  body {
+    font-family: 'Arial', sans-serif;
+    background-color: #0F0842; 
+        color: #FFFFFF;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    padding: 20px;
+  }
+
+  .container {
+    background-color: #F8F8FF;
+    padding: 60px 50px;
+    border-radius: 25px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+    text-align: center;
+    max-width: 650px;
+    width: 100%;
+  }
+
+  img {
+    width: 200px; 
+    margin-bottom: 20px;
+    border-radius: 12px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+  }
+
+  h2 {
+    color: #6A5ACD;
+    font-size: 28px;
+    margin-bottom: 20px;
+  }
+
+  p {
+    font-size: 18px;
+    margin-bottom: 25px;
+    color: #333333;
+  }
+
+  #invitation {
+    background-color: #0F0842;
+    color: #FFFFFF;
+    padding: 25px;
+    border-radius: 18px;
+    font-size: 18px;
+    margin-bottom: 25px;
+    word-wrap: break-word;
+    text-align: center;
+  }
+
+  button {
+    padding: 12px 35px;
+    font-size: 16px;
+    cursor: pointer;
+    background-color: #6A5ACD;
+    color: #FFFFFF;
+    border: none;
+    border-radius: 12px;
+    font-weight: bold;
+    transition: 0.3s;
+  }
+
+  button:hover {
+    background-color: #8470FF;
+  }
+
+  .share {
+    margin-top: 20px;
+    font-size: 16px;
+    color: #333333;
+  }
+
+  @media screen and (max-width: 480px) {
+    .container {
+      padding: 25px 15px;
+    }
+    img {
+      width: 140px;
+    }
+    h2 {
+      font-size: 20px;
+    }
+    p {
+      font-size: 14px;
+    }
+    pre {
+      font-size: 10px;
+    }
+    input {
+      font-size: 13px;
+    }
+    button {
+      font-size: 13px;
+      padding: 8px 20px;
+    }
+}
+
+</style>
+</head>
+<body>
+<div class="container">
+  <img src="logo.png" alt="CodeEX Logo">
+
+  <h2>🎉 Your CodeEX Invitation is Ready!</h2>
+  <p id="greeting"></p>
+  <div id="invitation"></div>
+  <button onclick="copyCode()">Copy Invitation Code</button>
+  <div class="share">
+    Share your code with others on social media:<br>
+    #كود_الخبرة  #CodeX
+  </div>
+</div>
+
+<script>
+const userName = localStorage.getItem('codeexName') || "Participant";
+const code = localStorage.getItem('codeexCode') || "";
+
+document.getElementById('greeting').textContent = `Hello ${userName}, your CodeEX journey begins now!`;
+document.getElementById('invitation').textContent = code;
+
+function copyCode() {
+  navigator.clipboard.writeText(code).then(() => {
+    alert("✅ Your invitation code has been copied! Paste it in the registration form.");
+  });
+}
+</script>
+</body>
+</html>
