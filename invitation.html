@@ -2,115 +2,75 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- مهم للجوال -->
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Your CodeEX Invitation</title>
 <style>
-  body {
-    font-family: 'Arial', sans-serif;
-    background-color: #0F0842;
-    color: #FFFFFF;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    min-height: 100vh;
-    margin: 0;
-    padding: 15px;
-  }
+body {
+  font-family: 'Arial', sans-serif;
+  background-color: #0F0842;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  margin: 0;
+  padding: 15px;
+}
 
-  .container {
-    background-color: #F8F8FF;
-    padding: 35px 25px;
-    border-radius: 20px;
-    box-shadow: 0 8px 20px rgba(0,0,0,0.2);
-    text-align: center;
-    max-width: 550px;
-    width: 100%;
-  }
+.container {
+  background-color: #F8F8FF;
+  border-radius: 20px;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+  text-align: center;
+}
 
-  img {
-    width: 180px;
-    max-width: 60%;
-    margin-bottom: 20px;
-    border-radius: 12px;
-    box-shadow: 0 4px 12px rgba(0,0,0,0.15);
-  }
+/* Base Desktop */
+.container { max-width: 500px; padding: 35px; }
+img { width: 180px; }
+h2 { font-size: 24px; margin-bottom: 12px; color: #6A5ACD; }
+p { font-size: 16px; margin-bottom: 20px; color: #333333; }
+.code-box { background-color: #E0E0E0; color: #0F0842; padding: 18px; border-radius: 12px; font-size: 14px; word-break: break-word; font-weight: bold; margin-bottom: 20px; }
+button { padding: 12px 28px; font-size: 15px; cursor: pointer; background-color: #6A5ACD; color: #FFFFFF; border: none; border-radius: 10px; font-weight: bold; transition: 0.3s; }
+button:hover { background-color: #8470FF; }
 
-  h2 {
-    color: #6A5ACD;
-    font-size: 24px;
-    margin-bottom: 12px;
-  }
+/* Tablet */
+@media screen and (max-width: 1023px) {
+  .container { max-width: 450px; padding: 30px; }
+  img { width: 160px; }
+  h2 { font-size: 22px; }
+  p { font-size: 15px; }
+  .code-box { font-size: 13px; padding: 15px; }
+  button { font-size: 14px; padding: 10px; }
+}
 
-  p {
-    color: #333333;
-    font-size: 16px;
-    margin-bottom: 20px;
-  }
+/* Mobile Large */
+@media screen and (max-width: 767px) {
+  .container { width: 90%; padding: 25px; }
+  img { width: 150px; }
+  h2 { font-size: 20px; }
+  p { font-size: 14px; }
+  .code-box { font-size: 12px; padding: 12px; }
+  button { font-size: 14px; padding: 10px; }
+}
 
-  .code-box {
-    background-color: #E0E0E0;
-    color: #0F0842;
-    padding: 18px;
-    border-radius: 12px;
-    font-size: 14px;
-    word-break: break-word;
-    font-weight: bold;
-    margin-bottom: 20px;
-  }
-
-  button {
-    padding: 12px 28px;
-    font-size: 15px;
-    cursor: pointer;
-    background-color: #6A5ACD;
-    color: #FFFFFF;
-    border: none;
-    border-radius: 10px;
-    transition: 0.3s;
-    font-weight: bold;
-  }
-
-  button:hover {
-    background-color: #8470FF;
-  }
-
-  /* تعديلات للجوال */
-  @media screen and (max-width: 480px) {
-    .container {
-      padding: 25px 18px;
-    }
-    img {
-      width: 150px;
-    }
-    h2 {
-      font-size: 20px;
-    }
-    p {
-      font-size: 14px;
-    }
-    .code-box {
-      font-size: 12px;
-      padding: 14px;
-    }
-    button {
-      font-size: 14px;
-    }
-  }
+/* Mobile Small */
+@media screen and (max-width: 480px) {
+  .container { width: 90%; padding: 20px; }
+  img { width: 130px; }
+  h2 { font-size: 18px; }
+  p { font-size: 13px; }
+  .code-box { font-size: 11px; padding: 10px; }
+  button { font-size: 13px; padding: 8px; }
+}
 </style>
 </head>
 <body>
-
 <div class="container">
   <img src="logo.png" alt="CodeEX Logo">
-
   <h2>🎉 Congratulations!</h2>
   <p id="welcome"></p>
-
   <div class="code-box" id="invitationCode"></div>
-
-  <p>📢 Share your invitation code with others using the hashtag:</p>
+  <p>📢 Share your invitation code with others:</p>
   <p style="color:#6A5ACD; font-weight:bold;">#كود_الخبرة #CodeX</p>
-
   <button onclick="copyCode()">Copy Code</button>
 </div>
 
@@ -118,7 +78,6 @@
 document.addEventListener("DOMContentLoaded", () => {
   const userName = localStorage.getItem('codeexName') || "Participant";
   const userCode = localStorage.getItem('codeexCode') || "No code generated.";
-  
   document.getElementById('welcome').textContent = `Hello ${userName}, your adventure awaits!`;
   document.getElementById('invitationCode').textContent = userCode;
 });
@@ -130,6 +89,5 @@ function copyCode() {
   });
 }
 </script>
-
 </body>
 </html>
