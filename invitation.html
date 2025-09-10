@@ -118,7 +118,7 @@ button:hover {
 document.addEventListener("DOMContentLoaded", () => {
   const userName = localStorage.getItem('codeexName') || "Participant";
   const userCode = localStorage.getItem('codeexCode') || "No code generated.";
-  document.getElementById('welcome').textContent = `Hello ${userName}, your adventure awaits!`;
+  document.getElementById('welcome').textContent = `Hello ${userName}, your CodeEX invittion is ready!`;
   document.getElementById('invitationCode').textContent = userCode;
 });
 
@@ -131,6 +131,7 @@ function copyCode() {
 </script>
 </body>
 </html>
+
 
 
 
